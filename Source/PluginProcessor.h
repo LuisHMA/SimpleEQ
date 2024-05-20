@@ -50,13 +50,23 @@ public:
     void changeProgramName (int index, const juce::String& newName) override;
 
     //==============================================================================
-    void getStateInformation (juce::MemoryBlock& destData) override;
+    void getStateInformation (juce ::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     juce::AudioProcessorValueTreeState apvts {*this, nullptr, "Parameters", createParameterLayout()};
 
 private:
+  // Filters
+  using Filter = juce::dsp::IIR::Filter<float>;
+  using CutFilter = juce::dsp::ProcessorChain<Filter, Filter, Filter, Filter>;
+
+  //Chains
+  using MonoChain = juce::dsp::ProcessorChain<CutFilter, Filter, CutFilter>;
+
+  MonoChain leftChain, rightChain;
+
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
 };
