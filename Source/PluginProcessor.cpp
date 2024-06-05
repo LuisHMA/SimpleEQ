@@ -127,39 +127,41 @@ void SimpleEQAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     switch ( chainSettings.lowCutSlope)
     {
         case Slope_12:
-            {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-            }
+        {
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
             break;
+        }
+            
         case Slope_24:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
+            break;    
         }       
-            break;
+            
         case Slope_36:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
-                *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
-                leftLowCut.setBypassed<2>(false);
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
+            *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
+            leftLowCut.setBypassed<2>(false);
             break;
         }
         case Slope_48:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
-                *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
-                leftLowCut.setBypassed<2>(false);
-                *leftLowCut.get<3>().coefficients = *cutCoefficients[3];
-                leftLowCut.setBypassed<3>(false);
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
+            *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
+            leftLowCut.setBypassed<2>(false);
+            *leftLowCut.get<3>().coefficients = *cutCoefficients[3];
+            leftLowCut.setBypassed<3>(false);
             break;
         }
         default:
@@ -177,38 +179,38 @@ void SimpleEQAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     {
         case Slope_12:
             {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-            }
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
             break;
+            }
         case Slope_24:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-        }       
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
             break;
+        }       
         case Slope_36:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-                *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
-                rightLowCut.setBypassed<2>(false);
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
+            *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
+            rightLowCut.setBypassed<2>(false);
             break;
         }
         case Slope_48:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-                *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
-                rightLowCut.setBypassed<2>(false);
-                *rightLowCut.get<3>().coefficients = *cutCoefficients[3];
-                rightLowCut.setBypassed<3>(false);
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
+            *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
+            rightLowCut.setBypassed<2>(false);
+            *rightLowCut.get<3>().coefficients = *cutCoefficients[3];
+            rightLowCut.setBypassed<3>(false);
             break;
         }
         default:
@@ -287,39 +289,41 @@ void SimpleEQAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     switch ( chainSettings.lowCutSlope)
     {
         case Slope_12:
-            {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-            }
+        {
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
             break;
+        }
+            
         case Slope_24:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
-        }       
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
             break;
+        }       
+            
         case Slope_36:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
-                *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
-                leftLowCut.setBypassed<2>(false);
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
+            *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
+            leftLowCut.setBypassed<2>(false);
             break;
         }
         case Slope_48:
         {
-                *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
-                leftLowCut.setBypassed<0>(false);
-                *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
-                leftLowCut.setBypassed<1>(false);
-                *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
-                leftLowCut.setBypassed<2>(false);
-                *leftLowCut.get<3>().coefficients = *cutCoefficients[3];
-                leftLowCut.setBypassed<3>(false);
+            *leftLowCut.get<0>().coefficients = *cutCoefficients[0];
+            leftLowCut.setBypassed<0>(false);
+            *leftLowCut.get<1>().coefficients = *cutCoefficients[1];
+            leftLowCut.setBypassed<1>(false);
+            *leftLowCut.get<2>().coefficients = *cutCoefficients[2];
+            leftLowCut.setBypassed<2>(false);
+            *leftLowCut.get<3>().coefficients = *cutCoefficients[3];
+            leftLowCut.setBypassed<3>(false);
             break;
         }
         default:
@@ -336,39 +340,39 @@ void SimpleEQAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     switch ( chainSettings.lowCutSlope)
     {
         case Slope_12:
-            {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-            }
-            break;
+        {
+        *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+        rightLowCut.setBypassed<0>(false);
+        break;
+        }
         case Slope_24:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-        }       
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
             break;
+        }       
         case Slope_36:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-                *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
-                rightLowCut.setBypassed<2>(false);
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
+            *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
+            rightLowCut.setBypassed<2>(false);
             break;
         }
         case Slope_48:
         {
-                *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
-                rightLowCut.setBypassed<0>(false);
-                *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
-                rightLowCut.setBypassed<1>(false);
-                *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
-                rightLowCut.setBypassed<2>(false);
-                *rightLowCut.get<3>().coefficients = *cutCoefficients[3];
-                rightLowCut.setBypassed<3>(false);
+            *rightLowCut.get<0>().coefficients = *cutCoefficients[0];
+            rightLowCut.setBypassed<0>(false);
+            *rightLowCut.get<1>().coefficients = *cutCoefficients[1];
+            rightLowCut.setBypassed<1>(false);
+            *rightLowCut.get<2>().coefficients = *cutCoefficients[2];
+            rightLowCut.setBypassed<2>(false);
+            *rightLowCut.get<3>().coefficients = *cutCoefficients[3];
+            rightLowCut.setBypassed<3>(false);
             break;
         }
         default:
