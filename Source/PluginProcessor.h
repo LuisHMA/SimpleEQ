@@ -104,34 +104,39 @@ private:
   }
 
   template<typename ChainType, typename CoefficientType>
-  void updateCutFilter(ChainType& chain, const CoefficientType& cutCoefficients, const Slope& lowCutSlope)
+  void updateCutFilter(ChainType& chain, const CoefficientType& coefficients, const Slope& slope)
   {
     chain.template setBypassed<0>(true);
     chain.template setBypassed<1>(true);
     chain.template setBypassed<2>(true);
     chain.template setBypassed<3>(true);
 
-    switch (lowCutSlope)
+    switch (slope)
     {
       case Slope_48:
       {
-        update<3>(chain, cutCoefficients);
+        update<3>(chain, coefficients);
         // Do not use Break; so it can run all cases below
       }
       case Slope_36:
       {
-        update<2>(chain, cutCoefficients);
+        update<2>(chain, coefficients);
       }
       case Slope_24:
       {
-        update<1>(chain, cutCoefficients);
+        update<1>(chain, coefficients);
       }
       case Slope_12:
       {
-        update<0>(chain, cutCoefficients);
+        update<0>(chain, coefficients);
       }
     }
   }
+
+  void updateLowCutFilters(const ChainSettings& chainsettings);
+  void updateHighCutFilters(const ChainSettings& chainsettings);
+
+  void updateFilters();
 
   //==============================================================================
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
