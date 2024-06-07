@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="jR5UPa" name="SimpleEQ" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginManufacturer="Luis Marinho" companyName="Luis Marinho"
+              pluginManufacturerCode="Luis">
   <MAINGROUP id="qOWOUs" name="SimpleEQ">
     <GROUP id="{F2F24AC0-B7C1-1F11-A3D4-69082950D847}" name="Source">
       <FILE id="y1e6uZ" name="PluginProcessor.cpp" compile="1" resource="0"
