@@ -43,7 +43,7 @@ void SimpleEQAudioProcessorEditor::paint (juce::Graphics& g)
 
     g.setColour (juce::Colours::white);
     g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+    g.drawFittedText ("[ WIP Response Area ]", getLocalBounds().removeFromTop(getLocalBounds().getHeight() * 0.33), juce::Justification::centred, 1);
 }
 
 void SimpleEQAudioProcessorEditor::resized()
